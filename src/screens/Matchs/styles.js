@@ -56,7 +56,7 @@ export default StyleSheet.create({
         alignItems:'center',
     },
     textColorResume:{
-        color:Global.COLOR.gradient2
+        color:Global.COLOR.gradient2,paddingBottom:'0.5%'
     },
     botContainerDetail:{
         width:'90%',paddingVertical:'5%'

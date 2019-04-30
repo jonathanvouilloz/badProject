@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
         flex:1, height: undefined, width: undefined
     },
     dividerDouble:{
-        borderBottomColor: 'white',borderBottomWidth: 0.25
+        borderBottomColor: Global.COLOR.whiteCustom,borderBottomWidth: 0.25
     },
     dividerDouble2:{
-        borderBottomColor: 'white',borderBottomWidth: 0.25, alignItems:'flex-end'
+        borderBottomColor: Global.COLOR.whiteCustom,borderBottomWidth: 0.25, alignItems:'flex-end'
     },
     alignTextDouble:{
         alignItems:'flex-end'

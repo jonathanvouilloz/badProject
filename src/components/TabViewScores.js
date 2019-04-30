@@ -44,7 +44,7 @@ export default class ComponentSet extends React.Component {
             <View style={styles.container}>
                 <View style={styles.containerSecondRow}>
                     <View style={styles.containerScore}>
-                        <Item regular style={{width:'60%',height:'60%',borderColor:win === undefined ? 'white' : win === true ? 'green' : 'red'}}>
+                        <Item regular style={{width:'60%',height:'60%',borderColor:win === undefined ? Global.COLOR.whiteCustom : win === true ? 'green' : 'red'}}>
                             <Input placeholder={'0'}
                                    onChangeText={(text) => this.setState({score1:text})}
                                    onSubmitEditing={() => this._handlePress()}
@@ -62,7 +62,7 @@ export default class ComponentSet extends React.Component {
                         />
                     </View>
                     <View style={styles.containerScore}>
-                        <Item regular style={{width:'60%',height:'60%',borderColor:win === undefined ? 'white' : win === true ? 'red' : 'green'}}>
+                        <Item regular style={{width:'60%',height:'60%',borderColor:win === undefined ? Global.COLOR.whiteCustom : win === true ? 'red' : 'green'}}>
                             <Input placeholder={'0'}
                                    onSubmitEditing={() => this._handlePress()}
                                    onChangeText={(text) => this.setState({score2:text})}

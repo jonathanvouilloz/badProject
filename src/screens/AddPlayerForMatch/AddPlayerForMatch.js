@@ -18,16 +18,16 @@ class AddPlayerForMatch extends React.Component {
 
     render() {
         const data = [
-            {id:1,firstName:"Jean",lastname:"Hoiay"},
-            {id:2,firstName:"Bernard",lastname:"Gabay"},
-            {id:3,firstName:"Henry",lastname:"Tazya"},
-            {id:4,firstName:"Pat",lastname:"Qasy"},
-            {id:5,firstName:"Julien",lastname:"Oupiia"},
-            {id:1,firstName:"Jean",lastname:"Hoiay"},
-            {id:2,firstName:"Bernard",lastname:"Gabay Le Normand"},
-            {id:3,firstName:"Henry",lastname:"Tazya"},
-            {id:4,firstName:"Pat",lastname:"Qasy"},
-            {id:5,firstName:"Julien",lastname:"Oupiia"}
+                {id:1,firstName:"Jean",lastname:"Hoiay"},
+                {id:2,firstName:"Bernard",lastname:"Gabay"},
+                {id:3,firstName:"Henry",lastname:"Tazya"},
+                {id:4,firstName:"Pat",lastname:"Qasy"},
+                {id:5,firstName:"Julien",lastname:"Oupiia"},
+                {id:1,firstName:"Jean",lastname:"Hoiay"},
+                {id:2,firstName:"Bernard",lastname:"Gabay Le Normand"},
+                {id:3,firstName:"Henry",lastname:"Tazya"},
+                {id:4,firstName:"Pat",lastname:"Qasy"},
+                {id:5,firstName:"Julien",lastname:"Oupiia"}
             ];
 
 
@@ -51,7 +51,7 @@ class AddPlayerForMatch extends React.Component {
                                 <FlatList
                                     data={data}
                                     keyExtractor={(item) => item.id.toString()}
-                                    renderItem={({item}) => <ListItemAddPlayer addPlayer={() => this.goBack(item)}
+                                    renderItem={({item}) => <ListItemAddPlayer addPlayer={() => this.goBack(item, )}
                                                                              player={item}/>}
                                 />
                             </List>

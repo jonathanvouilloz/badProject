@@ -108,7 +108,7 @@ class Teams extends React.Component {
                             <View style={{width:'90%',flex:1,height:75}}>
                                 <View style={{flex:1}}>
                                     <View style={styles.containerTextConfiguration}>
-                                        <Text style={{color:'white'}}>Equipe pour le club </Text><Text style={styles.textTypeMatch}>{this.state.club}</Text>
+                                        <Text style={{color:Global.COLOR.whiteCustom}}>Equipe pour le club </Text><Text style={styles.textTypeMatch}>{this.state.club}</Text>
                                     </View>
                                     <View style={styles.containerDetailMatch}>
                                         <View style={styles.containerTextSquadClub}>

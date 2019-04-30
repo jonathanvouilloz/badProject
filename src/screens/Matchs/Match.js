@@ -35,8 +35,8 @@ class ListMatchs extends React.Component {
             loaded: true,
             selectedIndex:0,
             thirdSet:false,
-            joueur1:'',
-            joueur2:'',
+            joueur1:'A définir',
+            joueur2:'A définir',
             typeMatch:'',
             scoreSet1Eq1:'0',
             scoreSet1Eq2:'0',
@@ -108,7 +108,7 @@ class ListMatchs extends React.Component {
                 <View style={styles.containerAddPlayer}>
                     <TouchableWithoutFeedback onPress={()=> this.props.navigation.navigate("AddPlayerForMatch",{test:"idEquipeASend",returnData: this.returnData.bind(this)})}>
                         <View style={styles.containerAddPlayerDetailRight}>
-                                    {this.state.joueur1 !== '' ?
+                                    {this.state.joueur1 !== 'A définir' ?
                                         <View><Text style={styles.colorNamePlayer}>{this.state.joueur1}</Text></View>
                                         :
                                         <View style={styles.containerImageAddUser}>
@@ -123,7 +123,7 @@ class ListMatchs extends React.Component {
                     </TouchableWithoutFeedback>
                     <TouchableWithoutFeedback onPress={()=> this.props.navigation.navigate("AddPlayerForMatch",{test:"idEquipeASend",returnData: this.returnData.bind(this)})}>
                         <View style={styles.containerAddPlayerDetailLeft}>
-                            {this.state.joueur2 !== '' ?
+                            {this.state.joueur2 !== 'A définir' ?
                                 <View><Text style={styles.colorNamePlayer}>{this.state.joueur2}</Text></View>
                                 :
                                 <View style={styles.containerImageAddUser}>
@@ -202,12 +202,12 @@ class ListMatchs extends React.Component {
 
                 </View>
                     <View style={{alignItems:'center',marginBottom:20}}>
-                        <View style={{width:'90%',flexDirection:'row',borderTopWidth:0.25,borderTopColor:'white',paddingTop:15}}>
+                        <View style={{width:'90%',flexDirection:'row',borderTopWidth:0.25,borderTopColor:Global.COLOR.whiteCustom,paddingTop:15}}>
                             <View style={{flex:1,justifyContent:'flex-start',flexDirection:'row'}}>
-                                <Icon type={"AntDesign"} style={{fontSize: 17, color: Global.COLOR.whiteCustom}} name={"caretleft"} /><Text note style={{color:'white'}}>Match précédent</Text>
+                                <Icon type={"AntDesign"} style={{fontSize: 17, color: Global.COLOR.whiteCustom}} name={"caretleft"} /><Text note style={{color:Global.COLOR.whiteCustom}}>Match précédent</Text>
                             </View>
                             <View style={{flex:1, justifyContent:'flex-end',flexDirection:'row'}}>
-                                    <Text note style={{color:'white'}}>Match suivant</Text><Icon style={{fontSize: 17, color: Global.COLOR.whiteCustom}} type={"AntDesign"} name={"caretright"} />
+                                    <Text note style={{color:Global.COLOR.whiteCustom}}>Match suivant</Text><Icon style={{fontSize: 17, color: Global.COLOR.whiteCustom}} type={"AntDesign"} name={"caretright"} />
                             </View>
                         </View>
                     </View>
