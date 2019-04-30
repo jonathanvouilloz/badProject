@@ -10,11 +10,13 @@ import resetStack from "../../navigation/resetStack";
 import StatusBar from '../../components/StatusBar'
 
 
+
+
 class ListMatchs extends React.Component {
 
     static navigationOptions = ({ navigation }) => {
         return {
-            title: `${navigation.state.params.title}`,
+            title: `${navigation.state.params.currentTitle}`,
             headerRight: (
                 <View style={{width:50,alignItems: 'center'}}>
                     <Icon
@@ -50,7 +52,7 @@ class ListMatchs extends React.Component {
     }
 
     async componentWillMount() {
-        const typeMatch = this.props.navigation.getParam('typeMatch', 'NO-ID');
+        const typeMatch = this.props.navigation.getParam('currentCode', 'NO-ID');
         await this.setState({typeMatch});
         this.setState({ loaded: false,activePage:1});
     }
@@ -114,7 +116,8 @@ class ListMatchs extends React.Component {
                                             style={styles.versusIcon}
                                             resizeMode='contain'
                                             source={require('../../../assets/images/addPlayerSimple.png')}
-                                        /></View>
+                                        />
+                                        </View>
                                     }
                         </View>
                     </TouchableWithoutFeedback>
@@ -128,7 +131,8 @@ class ListMatchs extends React.Component {
                                         style={styles.versusIcon}
                                         resizeMode='contain'
                                         source={require('../../../assets/images/addPlayerSimple.png')}
-                                    /></View>
+                                    />
+                                </View>
                             }
                         </View>
                     </TouchableWithoutFeedback>
@@ -170,9 +174,9 @@ class ListMatchs extends React.Component {
                         <H3 style={styles.textColorResume}>Résumé</H3>
                         <View style={styles.containerResumeNameScore}>
                             <View style={styles.containerResumeNameDetail}>
-                                <View><Text style={styles.colorWhite}>Jean Michel</Text></View>
+                                <View><Text style={styles.colorWhite}>{this.state.joueur1}</Text></View>
                                 <View style={styles.dividerResume}/>
-                                <View><Text style={styles.colorWhite}>Henri Dès</Text></View>
+                                <View><Text style={styles.colorWhite}>{this.state.joueur2}</Text></View>
                             </View>
                             {this.state.loaded ?
                             <View>
@@ -194,7 +198,19 @@ class ListMatchs extends React.Component {
                             }
                         </View>
                     </View>
+
+
                 </View>
+                    <View style={{alignItems:'center',marginBottom:20}}>
+                        <View style={{width:'90%',flexDirection:'row',borderTopWidth:0.25,borderTopColor:'white',paddingTop:15}}>
+                            <View style={{flex:1,justifyContent:'flex-start',flexDirection:'row'}}>
+                                <Icon type={"AntDesign"} style={{fontSize: 17, color: Global.COLOR.whiteCustom}} name={"caretleft"} /><Text note style={{color:'white'}}>Match précédent</Text>
+                            </View>
+                            <View style={{flex:1, justifyContent:'flex-end',flexDirection:'row'}}>
+                                    <Text note style={{color:'white'}}>Match suivant</Text><Icon style={{fontSize: 17, color: Global.COLOR.whiteCustom}} type={"AntDesign"} name={"caretright"} />
+                            </View>
+                        </View>
+                    </View>
                 </ScrollView>
                 </View>
             </KeyboardAvoidingView>

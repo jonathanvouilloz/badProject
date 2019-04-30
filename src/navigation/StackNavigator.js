@@ -46,8 +46,11 @@ const StackNavigator = createStackNavigator(
         },
         Teams :{
             screen:TeamsScreen,
-            navigationOptions:{
-            }
+            navigationOptions: ({ navigation }) => ({
+                headerTintColor: Global.COLOR.whiteCustom,
+                headerStyle: { backgroundColor: Global.COLOR.mainColor, elevation: 0, shadowOpacity: 0},
+                headerTitleStyle: { color: Global.COLOR.whiteCustom },
+            }),
         },
         SplashScreen:{
             screen:SplashScreen,
@@ -64,7 +67,7 @@ const StackNavigator = createStackNavigator(
     }
     ,
     {
-        initialRouteName:'ListMatchs',
+        initialRouteName:'Home',
         transitionConfig: () => fromRight(),
     }
 );

@@ -21,7 +21,7 @@ export default StyleSheet.create({
         justifyContent: 'center'
     },
     botContainer:{
-        flex:2
+        flex:2,
     },
     logoStyle:{
         flex:1, height: undefined, width: undefined

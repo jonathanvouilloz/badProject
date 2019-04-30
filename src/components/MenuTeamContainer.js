@@ -1,26 +1,28 @@
 import React from 'react';
-import {View, Image, StyleSheet,Dimensions} from 'react-native';
+import {View, Image, StyleSheet,Dimensions,TouchableWithoutFeedback} from 'react-native';
 import {Text} from 'native-base'
 import Global from "../globalUtils/Globals";
 
 const DeviceWidth = Dimensions.get('window').width;
 
-const ContainerTeam = ({clubName, squadNumber}) => (
+const ContainerTeam = ({clubName, squadNumber,onPressCallBack}) => (
 
-            <View style={styles.containerDetailTeam}>
-                <View style={{flex: 2}}>
-                    <Image
-                        style={{flex: 1}}
-                        resizeMode='contain'
-                        source={require('../../assets/images/logoTeamHomePage.png')}
-                    />
+            <TouchableWithoutFeedback onPress={()=>onPressCallBack(clubName)}>
+                <View style={styles.containerDetailTeam}>
+                    <View style={{flex: 2}}>
+                        <Image
+                            style={{flex: 1}}
+                            resizeMode='contain'
+                            source={require('../../assets/images/logoTeamHomePage.png')}
+                        />
+                    </View>
+                    <View style={{height: '10%'}} />
+                    <View style={{flex: 1, justifyContent: 'center'}}>
+                        <Text numberOfLines={1} style={styles.teamText}>{clubName}</Text>
+                        <Text style={styles.squadText}>{squadNumber}</Text>
+                    </View>
                 </View>
-                <View style={{height: '10%'}} />
-                <View style={{flex: 1, justifyContent: 'center'}}>
-                    <Text numberOfLines={1} style={styles.teamText}>{clubName}</Text>
-                    <Text style={styles.squadText}>{squadNumber}</Text>
-                </View>
-            </View>
+            </TouchableWithoutFeedback>
 );
 
 const styles = StyleSheet.create({

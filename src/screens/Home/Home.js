@@ -16,6 +16,10 @@ class Home extends React.Component {
         }
     }
 
+    navConfigureTeam(team){
+        this.props.navigation.navigate("Teams",{title:team});
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -42,7 +46,7 @@ class Home extends React.Component {
                     </View>
                     <View style={styles.teamsContainer}>
                             <View style={styles.teamContainer1}>
-                                <TeamContainer squadNumber={"Equipe 2"} clubName={"BC CHENOIS"} />
+                                <TeamContainer squadNumber={"Equipe 2"} clubName={"BC CHENOIS"} onPressCallBack={(team) => this.navConfigureTeam(team)} />
                             </View>
                         <View style={styles.teamContainer2}>
                                 <TeamContainer spin={true} squadNumber={"Equipe 1"} clubName={"BC ROUSSEAU"} />

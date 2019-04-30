@@ -13,7 +13,8 @@ export default {
         gradient1:'#e65c00',
         gradient2: '#F9D423',
         gradient3: '#ff5757',
-        whiteCustom:'#CECECE'
+        whiteCustom:'#CECECE',
+        greenColor:'#00c853'
     },
     radiusView:5
 };

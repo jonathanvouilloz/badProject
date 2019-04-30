@@ -32,7 +32,7 @@ class SplashScreen extends React.Component {
         this.scaleValue.setValue(0);
         Animated.timing(this.scaleValue, {
             toValue: 1,
-            duration: 1000,
+            duration: 1500,
             easing: Easing.linear
         }).start((o) => {
             if (o.finished) {
@@ -45,7 +45,7 @@ class SplashScreen extends React.Component {
         this.scaleValue.setValue(1);
         Animated.timing(this.scaleValue, {
             toValue: 0,
-            duration: 500,
+            duration: 1000,
             easing: Easing.linear
         }).start((o) => {
             if (o.finished) {

@@ -8,6 +8,7 @@ import MenuMatchDouble from '../../components/MatchDoubleListMenu'
 import resetStack from "../../navigation/resetStack";
 import Global from '../../globalUtils/Globals'
 import StatusBar from '../../components/StatusBar'
+import StringMatch from '../../globalUtils/stringsMatch'
 
 
 class ListMatchs extends React.Component {
@@ -24,8 +25,9 @@ class ListMatchs extends React.Component {
             ),
         };
     };
-    navMatch(match, title) {
-        this.props.navigation.navigate("Match",{typeMatch:match,title:title})
+
+    navMatch(currentCode, currentTitle) {
+        this.props.navigation.navigate("Match",{currentTitle:currentTitle,currentCode:currentCode})
     }
 
     render() {
@@ -54,13 +56,13 @@ class ListMatchs extends React.Component {
 
                 <View style={styles.containerListMatchs}>
                     <ScrollView>
-                        <MenuMatchSimple navMatch={() => this.navMatch("SH1", "Simple Homme 1")} typeMatch={"Simple Homme 1"} />
-                        <MenuMatchSimple navMatch={() => this.navMatch("SH2", "Simple Homme 2")} typeMatch={"Simple Homme 2"} />
-                        <MenuMatchSimple navMatch={() => this.navMatch("SH3", "Simple Homme 3")} typeMatch={"Simple Homme 3"} />
-                        <MenuMatchSimple navMatch={() => this.navMatch("SD", "Simple Dame")} typeMatch={"Simple Dame"} />
-                        <MenuMatchDouble navMatch={() => this.navMatch("DH", "Simple Hommes")} typeMatch={"Double Hommes"} />
-                        <MenuMatchDouble navMatch={() => this.navMatch("DD", "Double Dames")} typeMatch={"Double Dames"} />
-                        <MenuMatchDouble navMatch={() => this.navMatch("DM", "Double mixte")} typeMatch={"Double Mixtes"} />
+                        <MenuMatchSimple navMatch={() => this.navMatch(StringMatch.SH1, StringMatch.SH1Title)} typeMatch={StringMatch.SH1Title} />
+                        <MenuMatchSimple navMatch={() => this.navMatch(StringMatch.SH2, StringMatch.SH2Title)} typeMatch={StringMatch.SH2Title} />
+                        <MenuMatchSimple navMatch={() => this.navMatch(StringMatch.SH3, StringMatch.SH3Title)} typeMatch={StringMatch.SH3Title} />
+                        <MenuMatchSimple navMatch={() => this.navMatch(StringMatch.SD, StringMatch.SDTitle)} typeMatch={StringMatch.SDTitle} />
+                        <MenuMatchDouble navMatch={() => this.navMatch(StringMatch.DH, StringMatch.DHTitle)} typeMatch={StringMatch.DHTitle} />
+                        <MenuMatchDouble navMatch={() => this.navMatch(StringMatch.DD, StringMatch.DDTitle)} typeMatch={StringMatch.DDTitle} />
+                        <MenuMatchDouble navMatch={() => this.navMatch(StringMatch.DM, StringMatch.DMTitle)} typeMatch={StringMatch.DMTitle} />
                     </ScrollView>
                 </View>
             </View>
